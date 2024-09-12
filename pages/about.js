@@ -20,7 +20,7 @@ class APage extends React.Component{
    </div>
    <div className="m-2 border rounded card-body">
    <h3 className="card-title">Luloy's storage</h3>
-   <div className="progress bg-dark">
+   <div className="progress">
    <div style={{width:'23%'}} className="progress-bar progress-bar-striped progress-bar-animated">23%</div>
    </div>
    </div>

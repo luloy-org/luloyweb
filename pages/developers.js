@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom'
 
 const devs = [
  {id:1,name:'Rey',des:'Sup lil nigs',img:'/assets/me.jpg'},
- {id:2,name:'Jasper',des:'Jullyver bading',img:'...'},
- {id:3,name:'Jed',img:'...'},
- {id:4,name:'Regie',img:'...'}
+ {id:2,name:'Jasper',des:'Jullyver bading',img:null},
+ {id:3,name:'Jed',img:null},
+ {id:4,name:'Regie',img:null}
 ]
 
 class MainPage extends React.Component{
@@ -17,15 +17,14 @@ class MainPage extends React.Component{
   }
   
   const imgStyle={
-   width:'100px',
-   height:'100px',
+   width:'100%',
    objectFit:'cover'
   }
   
   const devslist = devs.map(dev=>
-  <div style={cardbod} key={dev.id} className="text-center col-sm-5 bg-light border rounded">
-  <i><h1>{dev.name}</h1></i>
-  <p>{dev.des?dev.des:'no description provided'}</p>
+  <div key={dev.id} className="text-center card-body border rounded m-2 bg-light shadow col-sm-5">
+  <i className="card-title"><h3>{dev.name}</h3></i>
+  <p className="card-text">{dev.des?dev.des:'no description provided'}</p>
   </div>
   )
   
