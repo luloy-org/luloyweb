@@ -22,7 +22,7 @@ class MainPage extends React.Component{
   }
   
   const devslist = devs.map(dev=>
-  <div key={dev.id} className="text-center card-body border rounded m-2 bg-light shadow col-sm-5">
+  <div key={dev.id} className="text-center card-body border rounded m-1 bg-light shadow-sm col-sm-5">
   <i className="card-title"><h3>{dev.name}</h3></i>
   <p className="card-text">{dev.des?dev.des:'no description provided'}</p>
   </div>
