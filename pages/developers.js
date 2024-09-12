@@ -12,14 +12,6 @@ class MainPage extends React.Component{
  
  
   render (){
-  const cardbod={
-   margin:'5px'
-  }
-  
-  const imgStyle={
-   width:'100%',
-   objectFit:'cover'
-  }
   
   const devslist = devs.map(dev=>
   <div key={dev.id} className="text-center card-body border rounded m-1 bg-light shadow-sm col-sm-5">
