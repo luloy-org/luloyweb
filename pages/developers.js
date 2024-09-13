@@ -41,6 +41,7 @@ class MainPage extends React.Component{
    objectFit:'cover'
   }
   
+  
   const devslist = devs.map(dev=>
   <div key={dev.id} className="media card-body border rounded m-1 bg-white shadow-sm col-lg-1">
   <img style={imgs} className="rounded" src={dev.img?dev.img:'./assets/user.png'}></img>

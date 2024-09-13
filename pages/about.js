@@ -4,12 +4,28 @@ import HomePage from './home'
 import navigate from '/app'
 
 
+function fetchJSONData(url){
+            return fetch(url)
+                .then((response) => { 
+                  return response.json().then((data) => {
+                  return data;
+              }).catch((err) => {
+                  console.log(err);
+              }) 
+          });
+        }
+
 class APage extends React.Component{
+ constructor (){
+  super()
+  this.state = { customers: [] }
+ }
  
  render (){
   const AboutPageStyle = {
    padding:'0px'
   }
+  
   return (
    <div style={AboutPageStyle}>
    <div className="m-2 card">
@@ -29,6 +45,9 @@ class APage extends React.Component{
    navigate('nyanya')
    }
    } className="m-2 btn btn-info" >Go to home</button>
+   <div className="card m-1 border bg-light">
+
+   </div>
    </div>
    )
  }
