@@ -2,18 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import HomePage from './home'
 import navigate from '/app'
-
-
-function fetchJSONData(url){
-            return fetch(url)
-                .then((response) => { 
-                  return response.json().then((data) => {
-                  return data;
-              }).catch((err) => {
-                  console.log(err);
-              }) 
-          });
-        }
+import Data from '/data/customers'
 
 class APage extends React.Component{
  constructor (){
@@ -25,6 +14,29 @@ class APage extends React.Component{
   const AboutPageStyle = {
    padding:'0px'
   }
+  
+  const customers = Data.Customers.map(cus=>
+   <div key={cus.id} className="card-body bg-none m-1 border rounded">
+   <h5 className="card-title">{cus.name}</h5>
+   <table className="table table-hover">
+   <thead>
+   <tr>
+   <th>Item</th>
+   <th>Quantity</th>
+   </tr>
+   </thead>
+   <tbody>
+   {cus.orders.map(order=>
+   <tr key={Math.random()}>
+   <td>{order.item}</td>
+   <td>{order.quan}</td>
+   </tr>
+   )}
+   </tbody>
+   </table>
+   </div>
+  )
+  
   
   return (
    <div style={AboutPageStyle}>
@@ -46,7 +58,7 @@ class APage extends React.Component{
    }
    } className="m-2 btn btn-info" >Go to home</button>
    <div className="card m-1 border bg-light">
-
+   {customers}
    </div>
    </div>
    )
