@@ -6,7 +6,7 @@ export default {
  Customers: [
   {
    id:1,
-   name:'Rey',
+   name:'Reymart Centeno',
    orders: [
     {item:"Coke",quan:2},
     {item:"Martis",quan:4},
@@ -15,7 +15,7 @@ export default {
   },
   {
    id:2,
-   name:'Earl',
+   name:'Jedrick Borbon',
    orders: [
     {item:"Modess",quan:1},
     {item:"Tampon",quan:4},
@@ -24,7 +24,7 @@ export default {
   },
   {
    id:3,
-   name:'Jhonny',
+   name:'Eljay Oblino',
    orders:[
     {item:'Milo',quan:20}
    ]
