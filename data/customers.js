@@ -9,7 +9,8 @@ export default {
    name:'Rey',
    orders: [
     {item:"Coke",quan:2},
-    {item:"Martis",quan:4}
+    {item:"Martis",quan:4},
+    {}
    ]
   },
   {
@@ -24,7 +25,9 @@ export default {
   {
    id:3,
    name:'Jhonny',
-   orders:[]
+   orders:[
+    {item:'Milo',quan:20}
+   ]
   }
  ]
 }

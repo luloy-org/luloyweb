@@ -43,7 +43,7 @@ class MainPage extends React.Component{
   
   
   const devslist = devs.map(dev=>
-  <div key={dev.id} className="media card-body border rounded m-1 bg-white shadow-sm col-lg-1">
+  <div key={dev.id} className="media card-body border rounded m-1 bg-white shadow-sm col-lg-5">
   <img style={imgs} className="rounded" src={dev.img?dev.img:'./assets/user.png'}></img>
   <div className="media-body m-2">
   <h4><i className="card-title">{dev.name}</i><span className="badge small shadow m-1 badge-info">{dev.pos?dev.pos:''}</span></h4>

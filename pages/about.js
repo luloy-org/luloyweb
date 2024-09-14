@@ -28,8 +28,8 @@ class APage extends React.Component{
    <tbody>
    {cus.orders.map(order=>
    <tr key={Math.random()}>
-   <td>{order.item}</td>
-   <td>{order.quan}</td>
+   <td>{order.item?order.item:'?'}</td>
+   <td>{order.quan?order.quan:0}</td>
    </tr>
    )}
    </tbody>
@@ -57,7 +57,7 @@ class APage extends React.Component{
    navigate('nyanya')
    }
    } className="m-2 btn btn-info" >Go to home</button>
-   <div className="card m-1 border bg-light">
+   <div className="m-1">
    {customers}
    </div>
    </div>
