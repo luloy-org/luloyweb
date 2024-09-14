@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom'
 import HomePage from './home'
 import navigate from '/app'
 import Data from '/data/customers'
+import {Products, Getprice} from '/data/products'
 
 class APage extends React.Component{
  constructor (){
   super()
-  this.state = { customers: [] }
+  this.state = {}
  }
  
  render (){
@@ -18,18 +19,22 @@ class APage extends React.Component{
   const customers = Data.Customers.map(cus=>
    <div key={cus.id} className="card-body bg-none m-1 border rounded">
    <h5 className="card-title">{cus.name}</h5>
-   <table className="table table-hover">
+   <table className="table table-striped table-hover">
    <thead>
    <tr>
    <th>Item</th>
+   <th>Unit Price</th>
    <th>Quantity</th>
+   <th>Total</th>
    </tr>
    </thead>
    <tbody>
    {cus.orders.map(order=>
    <tr key={Math.random()}>
-   <td>{order.item?order.item:'?'}</td>
+   <td>{order.item?order.item:'empty'}</td>
+   <td>{"₱"+Getprice(order.item)}</td>
    <td>{order.quan?order.quan:0}</td>
+   <td>{`₱${Getprice(order.item)*order.quan||0}`}</td>
    </tr>
    )}
    </tbody>
