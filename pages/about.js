@@ -2,8 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import HomePage from './home'
 import navigate from '/app'
-import Data from '/data/customers'
-import {Products, Getprice} from '/data/products'
+import {Data,Products,Getprice} from '/data/maindata'
 
 class APage extends React.Component{
  constructor (){
@@ -16,7 +15,7 @@ class APage extends React.Component{
    padding:'0px'
   }
   
-  const customers = Data.Customers.map(cus=>
+  const customers = Data.map(cus=>
    <div key={cus.id} className="card-body bg-none m-1 border rounded">
    <h5 className="card-title">{cus.name}</h5>
    <table className="table table-striped table-hover">
