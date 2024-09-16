@@ -23,7 +23,7 @@ class Alert extends React.Component{
  render(){
   
   return (
-   <div className="m-1 alert alert-success">
+   <div className="border m-1 alert alert-success">
    <span data-feather="check"></span>
    <p>Page loaded</p>
    </div>

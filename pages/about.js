@@ -18,8 +18,8 @@ class APage extends React.Component{
   const customers = Data.map(cus=>
    <div key={cus.id} className="card-body bg-none m-1 border rounded">
    <h5 className="card-title">{cus.name}</h5>
-   <table className="table table-striped table-hover">
-   <thead>
+   <table className="table table-hover rounded">
+   <thead className="thead-light">
    <tr>
    <th>Item</th>
    <th>Unit Price</th>
