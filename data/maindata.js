@@ -63,13 +63,14 @@ export const Data = [
  {
   id:3,
   name:'Jed',
-  img:null,
-  icon:"award"
+  img:'jed.jpg',
+  icon:"award-fill"
  },
  {
   id:4,
   name:'Rey',
   img:null,
+  des:NaN,
   icon:"shield-fill-check"
  },
  {
@@ -89,7 +90,8 @@ export const Data = [
  {
   id:8,
   name:'Alexander Pinapit',
-  des:'Alex V2'
+  des:'Alex V2',
+  icon:'hammer'
  },
  {
   id:9,
