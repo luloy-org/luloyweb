@@ -5,6 +5,7 @@ import AboutPage from './pages/about'
 import DevsPage from './pages/developers'
 
 const content = document.getElementById('content')
+const loadingContent = document.getElementById('loadingContent')
 const topbar = document.querySelector("#navbarsExample03")
 
 const routes = {
@@ -19,7 +20,7 @@ const hiddenRoutes={
  'viewdevs': null
 }
 
-navigate('devs')
+navigate('')
 
 function loadingElement() {
  return (
@@ -38,10 +39,14 @@ function navigate (route){
  const navbtn = document.querySelector(`a[data-route=${direction}]`)
  
  navbtn.parentElement.classList.add('active')
- ReactDOM.render(loadingElement(),content)
+ ReactDOM.render(loadingElement(),loadingContent)
+ ReactDOM.render(routes[direction],content)
+ content.hidden=true
+ loadingContent.hidden=false
  topbar.classList.remove('show')
  setTimeout(function (){
-  ReactDOM.render(routes[direction],content)
+  loadingContent.hidden=true
+  content.hidden=false
   feather.replace()
   navigating=false
  },1500)
@@ -49,10 +54,11 @@ function navigate (route){
 
 for (const x in routes){
  const btn = document.querySelector(`a[data-route=${x}]`)
+ const route = btn.getAttribute('data-route')
  
  if (btn!=null){
   btn.onclick=()=>{
-   navigate(x)
+   navigate(route)
   }
  } else {
   console.error(`[${x}] is not a page`)

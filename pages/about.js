@@ -19,29 +19,30 @@ class APage extends React.Component{
    var total = 0
    let hp = 0
    var item = ""
+   var itemid = null
    return(
-   <div key={cus.id} className="card-body bg-none m-1 border rounded">
+   <div key={cus.id} className="card-body bg-none m-1 border rounded table-responsive">
    <h5 className="card-title">{cus.name}</h5>
    <table className="table table-hover">
    <thead className="thead-light">
    <tr>
-   <th><i className="bi-box"></i><br/>Item</th>
-   <th><i className="bi-currency-dollar"></i><br/>Unit Price</th>
-   <th><i className="bi-cart"></i><br/>Quantity</th>
-   <th><i className="bi-percent"></i><br/>Total</th>
+   <th><i className="bi-box"></i><br/></th>
+   <th><i className="bi-currency-dollar"></i><br/></th>
+   <th><i className="bi-cart"></i><br/></th>
+   <th><i className="bi-minecart"></i><br/></th>
    </tr>
    </thead>
    <tbody>
    {cus.orders.map(order=>{
+   const orderid = Math.round(Math.random()*Math.PI*1000)
    var itemTotal =Getprice(order.item)*order.quan||0
    total+=itemTotal
    if (hp<itemTotal){
-    hp=itemTotal
-    item=order.item
+   hp=itemTotal
+   item=order.item
    }
-   
     return (
-   <tr key={Math.random()}>
+   <tr  id={`item-${orderid}`} key={orderid}>
    <td>{order.item?order.item:'empty'}</td>
    <td>{"₱"+Getprice(order.item)}</td>
    <td>{order.quan?order.quan:0}</td>
@@ -56,10 +57,10 @@ class APage extends React.Component{
    <li className="list-group-item">Highest Total: {item} - ₱{hp}</li>
    </ul>
    </div>
-   
-  )
+   )
   })
   
+ 
   
   return (
    <div style={AboutPageStyle}>

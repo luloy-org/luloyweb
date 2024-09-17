@@ -47,59 +47,55 @@ export const Data = [
  
  export const Devs = [
  {
-  id:1,
+  id:Math.random(),
   name:'Regie',
   des:'Sup lil nigs',
   img:null,
   icon:'wrench'
  },
  {
-  id:2,
+  id:Math.random(),
   name:'Jasper Fernandez',
   des:'ryimy',
   img:null,
   icon:"wrench"
  },
  {
-  id:3,
+  id:Math.random(),
   name:'Jed',
   img:'jed.jpg',
   icon:"award-fill"
  },
  {
-  id:4,
+  id:Math.random(),
   name:'Rey',
   img:null,
   des:NaN,
   icon:"shield-fill-check"
  },
  {
-  id:5,
+  id:Math.random(),
   name:'Einjel Ganzagan',
   img:'enjel.jpg',
   icon:"database-fill-gear"
  },
  {
-  id:6,
+  id:Math.random(),
   name:'Julbading Riopay'
  },
  {
-  id:7,
-  name:'Terrence Roxas'
+  id:Math.random(),
+  name:'Terrence Roxas',
+  icon:'tools'
  },
  {
-  id:8,
+  id:Math.random(),
   name:'Alexander Pinapit',
   des:'Alex V2',
   icon:'hammer'
  },
  {
-  id:9,
+  id:Math.random(),
   name:'Eljay D. Nagalulu'
- },
- {
-  id:Math.PI,
-  name:'LOSLSOSHSKSHSSJSHHAHSHSHSHSS',
-  icon:'tools'
  }
 ]
