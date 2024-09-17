@@ -23,9 +23,16 @@ class Alert extends React.Component{
  render(){
   
   return (
+   <div>
    <div className="border m-1 alert alert-success">
    <span data-feather="check"></span>
    <p>Page loaded</p>
+   </div>
+   <div className="card-body m-1 border bg-light">
+   <h5 className="card-title">Feather icons: </h5>
+   <span data-feather="home"></span>
+   <span data-feather="tool"></span>
+   </div>
    </div>
    )
  }

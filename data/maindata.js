@@ -51,14 +51,14 @@ export const Data = [
   name:'Regie',
   des:'Sup lil nigs',
   img:null,
-  pos:'UI Designer'
+  pos:'UI-D'
  },
  {
   id:2,
   name:'Jasper',
   des:'Jullyver bading',
   img:null,
-  pos:'Developer'
+  pos:'DEV'
  },
  {
   id:3,
@@ -70,6 +70,6 @@ export const Data = [
   id:4,
   name:'Rey',
   img:null,
-  pos:'Lead Developer'
+  pos:"LD"
  }
 ]

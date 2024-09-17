@@ -15,10 +15,12 @@ class APage extends React.Component{
    padding:'0px'
   }
   
-  const customers = Data.map(cus=>
+  const customers = Data.map(cus=>{
+   let total = 0
+   return(
    <div key={cus.id} className="card-body bg-none m-1 border rounded">
    <h5 className="card-title">{cus.name}</h5>
-   <table className="table table-hover rounded">
+   <table className="table table-hover border rounded">
    <thead className="thead-light">
    <tr>
    <th>Item</th>
@@ -28,18 +30,24 @@ class APage extends React.Component{
    </tr>
    </thead>
    <tbody>
-   {cus.orders.map(order=>
+   {cus.orders.map(order=>{
+   total+=Getprice(order.item)*order.quan||0
+    return (
    <tr key={Math.random()}>
    <td>{order.item?order.item:'empty'}</td>
    <td>{"₱"+Getprice(order.item)}</td>
    <td>{order.quan?order.quan:0}</td>
    <td>{`₱${Getprice(order.item)*order.quan||0}`}</td>
    </tr>
-   )}
+   )
+   })}
    </tbody>
    </table>
+   <p>Overall Total: ₱{total}</p>
    </div>
+   
   )
+  })
   
   
   return (
