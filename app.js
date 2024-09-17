@@ -13,6 +13,8 @@ const routes = {
  'devs': DevsPage()
 }
 
+let navigating = false
+
 const hiddenRoutes={
  'viewdevs': null
 }
@@ -26,6 +28,8 @@ function loadingElement() {
 }
  
 function navigate (route){
+ if(navigating==false){
+  navigating=true
  for (const x in routes){
   const btn = document.querySelector(`a[data-route=${x}]`)
   btn.parentElement.classList.remove('active')
@@ -33,16 +37,15 @@ function navigate (route){
  const direction = routes[route]?route:'home'
  const navbtn = document.querySelector(`a[data-route=${direction}]`)
  
-/* navbtn.parentElement.classList.add('active')*/
  navbtn.parentElement.classList.add('active')
  ReactDOM.render(loadingElement(),content)
- console.log(topbar.classList)
  topbar.classList.remove('show')
  setTimeout(function (){
   ReactDOM.render(routes[direction],content)
   feather.replace()
- },2000)
-}
+  navigating=false
+ },1500)
+
 
 for (const x in routes){
  const btn = document.querySelector(`a[data-route=${x}]`)
@@ -54,7 +57,11 @@ for (const x in routes){
  } else {
   console.error(`[${x}] is not a page`)
  }
- 
+}
+} else {
+ topbar.classList.remove('show')
+ console.log('nav in progress')
+}
 }
 
 
