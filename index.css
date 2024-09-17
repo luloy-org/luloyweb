@@ -8,15 +8,6 @@
 }
 
 
-#loader{
- 
-}
-
-#spin{
- height: 50px;
- width: 50px;
- font-size: 1rem;
-}
 
 .loader {
   width: 45px;
@@ -26,7 +17,7 @@
   animation: 
     l18-1 1s infinite,
     l18-2 1s infinite;
- position: absolute;
+ position: fixed;
  text-align: center;
  top: 50%;
  left: 50%;
@@ -41,4 +32,10 @@
 @keyframes l18-2 {
  0%,33%   {background-position: 0    0,50% 50%,100% 100%}
  66%,100% {background-position: 100% 0,50% 50%,0    100%}
+}
+
+.spin{
+ height: 50px;
+ width: 50px;
+ font-size: 1rem;
 }
