@@ -19,7 +19,7 @@ const hiddenRoutes={
  'viewdevs': null
 }
 
-navigate(null)
+navigate('devs')
 
 function loadingElement() {
  return (
