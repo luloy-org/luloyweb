@@ -33,7 +33,7 @@ export const Data = [
    orders: [
     {item:"Modess",quan:1},
     {item:"Tampon",quan:4},
-    {item:"Red Horse",quan:5}
+    {item:"Red Horse",quan:3}
    ]
   },
   {
@@ -51,25 +51,48 @@ export const Data = [
   name:'Regie',
   des:'Sup lil nigs',
   img:null,
-  pos:'UI-D'
+  icon:'wrench'
  },
  {
   id:2,
-  name:'Jasper',
-  des:'Jullyver bading',
+  name:'Jasper Fernandez',
+  des:'ryimy',
   img:null,
-  pos:'DEV'
+  icon:"wrench"
  },
  {
   id:3,
   name:'Jed',
   img:null,
-  pos:null
+  icon:"award"
  },
  {
   id:4,
   name:'Rey',
   img:null,
-  pos:"LD"
+  icon:"shield-fill-check"
+ },
+ {
+  id:5,
+  name:'Einjel Ganzagan',
+  img:'enjel.jpg',
+  icon:"database-fill-gear"
+ },
+ {
+  id:6,
+  name:'Julbading Riopay'
+ },
+ {
+  id:7,
+  name:'Terrence Roxas'
+ },
+ {
+  id:8,
+  name:'Alexander Pinapit',
+  des:'Alex V2'
+ },
+ {
+  id:9,
+  name:'Eljay D. Nagalulu'
  }
 ]

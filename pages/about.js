@@ -16,22 +16,30 @@ class APage extends React.Component{
   }
   
   const customers = Data.map(cus=>{
-   let total = 0
+   var total = 0
+   let hp = 0
+   var item = ""
    return(
    <div key={cus.id} className="card-body bg-none m-1 border rounded">
    <h5 className="card-title">{cus.name}</h5>
-   <table className="table table-hover border rounded">
+   <table className="table table-hover">
    <thead className="thead-light">
    <tr>
-   <th>Item</th>
-   <th>Unit Price</th>
-   <th>Quantity</th>
-   <th>Total</th>
+   <th><i className="bi-box"></i><br/>Item</th>
+   <th><i className="bi-currency-dollar"></i><br/>Unit Price</th>
+   <th><i className="bi-cart"></i><br/>Quantity</th>
+   <th><i className="bi-percent"></i><br/>Total</th>
    </tr>
    </thead>
    <tbody>
    {cus.orders.map(order=>{
-   total+=Getprice(order.item)*order.quan||0
+   var itemTotal =Getprice(order.item)*order.quan||0
+   total+=itemTotal
+   if (hp<itemTotal){
+    hp=itemTotal
+    item=order.item
+   }
+   
     return (
    <tr key={Math.random()}>
    <td>{order.item?order.item:'empty'}</td>
@@ -43,7 +51,10 @@ class APage extends React.Component{
    })}
    </tbody>
    </table>
-   <p>Overall Total: ₱{total}</p>
+   <ul className="list-group">
+   <li className="list-group-item">Overall: ₱{total}</li>
+   <li className="list-group-item">Highest Total: {item} - ₱{hp}</li>
+   </ul>
    </div>
    
   )
