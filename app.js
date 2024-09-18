@@ -14,7 +14,7 @@ const routes = {
  'devs': DevsPage()
 }
 
-let navigating = false
+var navigating = false
 
 function loadingElement() {
  return (
@@ -61,25 +61,24 @@ for (const x in routes){
 }
 } else {
  topbar.classList.remove('show')
- console.log('nav in progress')
+ window.history.forward()
 }
 }
 
 
-function loaded() {
+export function main() {
  const route= window.location.hash.replace("#","")||"home"
  navigate(route)
 }
 
 function  pop() {
-const route= window.location.hash.replace("#","")||"home"
+ const route= window.location.hash.replace("#","")||"home"
  navigate(route)
 }
 
 window.addEventListener("popstate",pop)
 
-window.addEventListener("load",loaded())
-
+window.loadpage=main
 
 //exports
 export default navigate

@@ -24,5 +24,8 @@ SystemJS.config({
 });
 
 SystemJS.import('./app')
+.then(function () {
+ window.loadpage()
+})
   .catch(console.error.bind(console));
   
