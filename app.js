@@ -20,7 +20,6 @@ const hiddenRoutes={
  'viewdevs': null
 }
 
-navigate('')
 
 function loadingElement() {
  return (
@@ -58,6 +57,7 @@ for (const x in routes){
  
  if (btn!=null){
   btn.onclick=()=>{
+   window.history.pushState({}, route, `#${route}`)
    navigate(route)
   }
  } else {
@@ -72,8 +72,16 @@ for (const x in routes){
 
 
 function loaded() {
- console.log("loaded")
+ const route= window.location.hash.replace("#","")||"home"
+ navigate(route)
 }
+
+function  pop() {
+const route= window.location.hash.replace("#","")||"home"
+ navigate(route)
+}
+
+window.addEventListener("popstate",pop)
 
 window.addEventListener("load",loaded())
 
