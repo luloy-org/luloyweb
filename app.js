@@ -71,6 +71,12 @@ for (const x in routes){
 }
 
 
+function loaded() {
+ console.log("loaded")
+}
+
+window.addEventListener("load",loaded())
+
 
 //exports
 export default navigate
