@@ -16,11 +16,6 @@ const routes = {
 
 let navigating = false
 
-const hiddenRoutes={
- 'viewdevs': null
-}
-
-
 function loadingElement() {
  return (
   <div className="loader spin"></div>

@@ -78,7 +78,8 @@ class APage extends React.Component{
    </div>
    <button onClick={
    function (){
-   navigate('nyanya')
+   window.history.pushState({},'home',"#home")
+   navigate('home')
    }
    } className="m-2 btn btn-info" >Go to home</button>
    <div className="m-1">
