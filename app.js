@@ -4,6 +4,8 @@ import HomePage from './pages/home'
 import AboutPage from './pages/about'
 import DevsPage from './pages/developers'
 
+
+
 import bootstrap from 'bootstrap'
 
 const content = document.getElementById('content')
