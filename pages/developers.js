@@ -22,16 +22,22 @@ class MainPage extends React.Component{
     width:'100%',
     margin:'0px'
    }
+   
   return (
    <div key={dev.id} className="card m-1 p-0 break-word" style={{width:'200px'}}>
   <img className="card-img-top" style={imgstye} src={dev.img?`./assets/${dev.img}`:'./assets/user.png'} alt="Card image"/>
   <div className="m-0">
-    <h5 className="card-title p-1 m-0 text-center">{dev.name}{dev.icon?' • ':''}<span className={`bi-${dev.icon?dev.icon:''}`}></span></h5>
-    <p className="card-body">{dev.des?dev.des:'no description provided'}</p>
+    <h5 className="card-title p-1 m-0 text-center">{dev.name}</h5>
+      <button type="button" className="btn btn-primary" data-bs-toggle="tooltip" title="Hooray!">
+    Hover over me!
+  </button>
   </div>
 </div>
    )})
-  
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
   return (
    <div>
    <button onClick={function () {

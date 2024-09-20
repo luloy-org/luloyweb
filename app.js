@@ -22,7 +22,7 @@ export function setTheme() {
 }
 
 function navigate(route) {
- const path = routes[route]?route:'home'
+ const path = routes[route]?route:'not_found'
  const buttons = document.querySelectorAll(`a[data-route]`)
  
  buttons.forEach((navbtn)=>{
