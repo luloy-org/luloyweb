@@ -72,8 +72,8 @@ class APage extends React.Component{
    </div>
    </div>
    <div className="m-2 border rounded card p-1">
-   <h3 className="card-header">Luloy's storage</h3>
-   <div className="progress">
+   <h3 className="p-2">Storage Space: </h3>
+   <div className="progress m-2">
    <div style={{width:'23%'}} className="progress-bar progress-bar-striped progress-bar-animated">23%</div>
    </div>
    </div>
