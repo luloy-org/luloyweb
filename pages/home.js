@@ -32,6 +32,7 @@ class Alert extends React.Component{
    <button onClick={
     function () {
      navigate('devs')
+     
     }
    } className="btn btn-warning m-3">
    Developers <span className="bi-wrench"></span>

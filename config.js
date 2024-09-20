@@ -25,7 +25,7 @@ SystemJS.config({
 
 SystemJS.import('./app')
 .then(function (){
- window.loadpage()
+ window.loadpage('home')
  window.loadtheme()
  }
 )

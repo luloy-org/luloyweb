@@ -16,6 +16,12 @@ export function Getprice (product){
  return item.price
 }
 
+const positions = {
+ 'dev': {pos:'wrench',text:'Developer'},
+ 'main': {pos:'tools',text:'Maintenance'},
+ 'secu': {pos:'shield-check-fill',name:'App Security'}
+}
+
 
 export const Data = [
   {
@@ -51,33 +57,33 @@ export const Data = [
   name:'Regie',
   des:'Sup lil nigs',
   img:null,
-  icon:'wrench'
+  pos:[]
  },
  {
   id:Math.random(),
   name:'Jasper B. tongbakal',
   des:'ryimy',
   img:null,
-  icon:"wrench"
+  pos:[]
  },
  {
   id:Math.random(),
   name:'Jed',
   img:'jed.jpg',
-  icon:"award-fill"
+  pos:[]
  },
  {
   id:Math.random(),
   name:'Rey',
   img:null,
   des:NaN,
-  icon:"shield-fill-check"
+  pos:[]
  },
  {
   id:Math.random(),
   name:'Einjel Ganzagan',
   img:'enjel.jpg',
-  icon:"database-fill-gear"
+  pos:[]
  },
  {
   id:Math.random(),
@@ -86,13 +92,13 @@ export const Data = [
  {
   id:Math.random(),
   name:'Terrence Roxas',
-  icon:'tools'
+  pos:[]
  },
  {
   id:Math.random(),
   name:'Alexander Pinapit',
   des:'Alex V2',
-  icon:'hammer'
+  pos:[]
  },
  {
   id:Math.random(),

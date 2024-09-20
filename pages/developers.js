@@ -7,7 +7,7 @@ class MainPage extends React.Component{
  
  
   render (){
-  
+
   const imgs = {
    width:'100px',
    height:'100px',
@@ -28,18 +28,21 @@ class MainPage extends React.Component{
   <img className="card-img-top" style={imgstye} src={dev.img?`./assets/${dev.img}`:'./assets/user.png'} alt="Card image"/>
   <div className="m-0">
     <h5 className="card-title p-1 m-0 text-center">{dev.name}</h5>
-      <button type="button" className="btn btn-primary" data-bs-toggle="tooltip" title="Hooray!">
+      <button onClick={function (){
+      console.log('clicked')
+      }} type="button" className="btn btn-primary" data-bs-toggle="tooltip" title="Hooray!">
     Hover over me!
   </button>
   </div>
 </div>
    )})
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  return (
+   <div onLoad={function(){
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
-  return (
-   <div>
+   }}>
    <button onClick={function () {
     window.history.back()
    }} className="btn m-1 btn-info"><span className="bi-chevron-left"></span> Back</button>
