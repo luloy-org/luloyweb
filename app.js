@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {routes} from './pages/app.pages'
-import * as DataManager from './data/datamanager'
 
 const content = document.getElementById('content')
 const toggle_theme = document.getElementById('mySwitch')
