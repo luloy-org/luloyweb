@@ -16,10 +16,16 @@ export function Getprice (product){
  return item.price
 }
 
-const positions = {
- 'dev': {pos:'wrench',text:'Developer'},
- 'main': {pos:'tools',text:'Maintenance'},
- 'secu': {pos:'shield-check-fill',name:'App Security'}
+export const positions = {
+ 'dev': {icon:'code-slash',text:'Developer'},
+ 'main': {icon:'tools',text:'Maintenance'},
+ 'secu': {icon:'shield-lock-fill',text:'App Security'},
+ 'moder': {icon:'hammer',text:'Moderator'},
+ 'data-sec': {icon:'database-fill-gear',text:'Database Manager'},
+ 'model': {icon:'boxes',text:'3D Modeler'},
+ 'bud': {icon:'coin',text:'Budget Manager'},
+ 'admin': {icon:'shield-fill-check',text:'Administrator'},
+ 'anim': {icon:'diamond-half',text:'Animator'}
 }
 
 
@@ -57,51 +63,53 @@ export const Data = [
   name:'Regie',
   des:'Sup lil nigs',
   img:null,
-  pos:[]
+  pos:['data-sec','moder','anim']
  },
  {
   id:Math.random(),
   name:'Jasper B. tongbakal',
   des:'ryimy',
   img:null,
-  pos:[]
+  pos:['moder']
  },
  {
   id:Math.random(),
   name:'Jed',
   img:'jed.jpg',
-  pos:[]
+  pos:['dev','admin']
  },
  {
   id:Math.random(),
   name:'Rey',
   img:null,
   des:NaN,
-  pos:[]
+  pos:['admin','model']
  },
  {
   id:Math.random(),
   name:'Einjel Ganzagan',
   img:'enjel.jpg',
-  pos:[]
+  pos:['model']
  },
  {
   id:Math.random(),
-  name:'Julbading Riopay'
+  name:'Julbading Riopay',
+  pos:['main']
  },
  {
   id:Math.random(),
   name:'Terrence Roxas',
-  pos:[]
+  pos:['secu','bud']
  },
  {
   id:Math.random(),
   name:'Alexander Pinapit',
   des:'Alex V2',
-  pos:[]
+  pos:['main','dev']
  },
  {
   id:Math.random(),
-  name:'Eljay D. Nagalulu'
+  name:'Eljay D. Nagalulu',
+  pos:['moder','main']
  }
 ]
