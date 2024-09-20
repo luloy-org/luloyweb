@@ -16,16 +16,21 @@ class MainPage extends React.Component{
   
   
   const devslist = Devs.map(dev=>{
+   const imgstye = {
+    objectFit:'cover',
+    height:'200px',
+    width:'100%',
+    margin:'0px'
+   }
   return (
-  <div key={dev.id} className="text-break media card-body border rounded m-1 bg-white shadow-sm col">
-  <img alt={dev.id} style={imgs} className="border rounded-circle" src={`./assets/${dev.img?dev.img:'user.png'}`}></img>
-  <div className="media-body m-2">
-  <h4 className="card-text"><i className="card-title">{dev.name}{dev.icon?' • ':''}</i><i className={`m-1 bi-${dev.icon?dev.icon:'?'}`}></i></h4>
-  <hr className="bg-light"/>
-  <p className="card-text">{dev.des?dev.des:'no description provided'}</p>
+   <div key={dev.id} className="card m-1 p-0 break-word" style={{width:'200px'}}>
+  <img className="card-img-top" style={imgstye} src={dev.img?`./assets/${dev.img}`:'./assets/user.png'} alt="Card image"/>
+  <div className="m-0">
+    <h5 className="card-title p-1 m-0 text-center">{dev.name}{dev.icon?' • ':''}<span className={`bi-${dev.icon?dev.icon:''}`}></span></h5>
+    <p className="card-body">{dev.des?dev.des:'no description provided'}</p>
   </div>
-  </div>
-  )})
+</div>
+   )})
   
   return (
    <div>

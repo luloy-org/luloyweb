@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import navigate from '/app'
 
 class MainPage extends React.Component{
  render (){
@@ -8,11 +9,9 @@ class MainPage extends React.Component{
   }
   return (
    <div>
-   <div id="home-page" className="m-0 jumbotron text-center bg-dark" style={homestyle}>
-   <div className="text-white">
-   <h1 className="card-title">{this.props.title}</h1>
-   <p className="card-text">{this.props.text}</p>
-   </div>
+   <div id="home-page" className="p-5 m-0 text-dark text-center bg-light" style={homestyle}>
+   <h1 className="">{this.props.title}</h1>
+   <p className="">{this.props.text}</p>
    </div>
    <Alert/>
    </div>
@@ -25,13 +24,18 @@ class Alert extends React.Component{
   return (
    <div>
    <div className="border m-1 alert alert-success">
-   <span data-feather="check"></span>
+   <h3 className="bi-check-circle"></h3>
    <p>Page loaded</p>
    </div>
-   <div className="card-body m-1 border bg-light">
-   <h5 className="card-title">Feather icons: </h5>
-   <span data-feather="home"></span>
-   <span data-feather="tool"></span>
+   <div className="card m-1 border ">
+   <h5 className="card-header">Devs: </h5>
+   <button onClick={
+    function () {
+     navigate('devs')
+    }
+   } className="btn btn-warning m-3">
+   Developers <span className="bi-wrench"></span>
+   </button>
    </div>
    </div>
    )

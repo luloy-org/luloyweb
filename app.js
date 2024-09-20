@@ -1,88 +1,73 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import HomePage from './pages/home'
-import AboutPage from './pages/about'
-import DevsPage from './pages/developers'
-
-
-
-import bootstrap from 'bootstrap'
+import {routes} from './pages/app.pages'
+import * as DataManager from './data/datamanager'
 
 const content = document.getElementById('content')
-const loadingContent = document.getElementById('loadingContent')
-const topbar = document.querySelector("#navbarsExample03")
+const toggle_theme = document.getElementById('mySwitch')
 
-const routes = {
- 'home': HomePage(),
- 'about': AboutPage(),
- 'devs': DevsPage()
-}
 
-var navigating = false
 
-function loadingElement() {
- return (
-  <div className="loader spin"></div>
- )
-}
+export function setTheme() {
+ const data = localStorage.theme?localStorage.theme:'light'
  
-function navigate (route){
- if(navigating==false){
-  navigating=true
- for (const x in routes){
-  const btn = document.querySelector(`a[data-route=${x}]`)
-  btn.parentElement.classList.remove('active')
+ switch (data) {
+  case 'light':
+   document.documentElement.setAttribute('data-bs-theme', 'light')
+   break;
+  case 'dark':
+   document.documentElement.setAttribute('data-bs-theme', 'dark')
+   toggle_theme.checked = true
+   break;
  }
- const direction = routes[route]?route:'home'
- const navbtn = document.querySelector(`a[data-route=${direction}]`)
- 
- navbtn.parentElement.classList.add('active')
- ReactDOM.render(loadingElement(),loadingContent)
- ReactDOM.render(routes[direction],content)
- content.hidden=true
- loadingContent.hidden=false
- topbar.classList.remove('show')
- setTimeout(function (){
-  loadingContent.hidden=true
-  content.hidden=false
-  feather.replace()
-  navigating=false
- },1500)
+}
 
-
-for (const x in routes){
- const btn = document.querySelector(`a[data-route=${x}]`)
- const route = btn.getAttribute('data-route')
+function navigate(route) {
+ const path = routes[route]?route:'home'
+ const buttons = document.querySelectorAll(`a[data-route]`)
  
- if (btn!=null){
-  btn.onclick=()=>{
-   window.history.pushState({}, route, `#${route}`)
-   navigate(route)
+ buttons.forEach((navbtn)=>{
+  const data = navbtn.getAttribute('data-route')
+  
+  if (data==path){
+   navbtn.classList.add('active')
+  } else {
+   navbtn.classList.remove('active')
   }
- } else {
-  console.error(`[${x}] is not a page`)
+ })
+ 
+ ReactDOM.render(routes[path],content)
+}
+
+//Outside the function
+const buttons = document.querySelectorAll('a[data-route]')
+buttons.forEach((btn)=>{
+ const data = btn.getAttribute('data-route')
+ btn.onclick=function(){
+  navigate(data)
+ }
+})
+
+
+toggle_theme.oninput=(event)=>{
+ var value = event.target.value
+ const html = document.documentElement
+ const attr = html.getAttribute('data-bs-theme')
+ 
+ switch (attr) {
+  case 'light':
+   document.documentElement.setAttribute('data-bs-theme', 'dark')
+   localStorage.setItem('theme','dark')
+   break;
+  case 'dark':
+   document.documentElement.setAttribute('data-bs-theme', 'light')
+   localStorage.setItem('theme','light')
+   break
  }
 }
-} else {
- topbar.classList.remove('show')
- window.history.forward()
-}
-}
+
+window.loadpage = navigate
+window.loadtheme = setTheme
 
 
-export function main() {
- const route= window.location.hash.replace("#","")||"home"
- navigate(route)
-}
-
-function  pop() {
- const route= window.location.hash.replace("#","")||"home"
- navigate(route)
-}
-
-window.addEventListener("popstate",pop)
-
-window.loadpage=main
-
-//exports
 export default navigate

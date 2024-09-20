@@ -1,78 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" type="text/css" media="all" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="bootstrap-4.6.0/css/bootstrap.min.css">
-  <!-- website icon -->
-  <link rel="shortcut icon" type="image/x-icon" href="/assets/logo.png">
-  <!-- Icon library -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-  <!-- jQuery and Bootstrap Javascript -->
-  <script src="jquery-3.5.1.slim.min.js"></script>
-  <script src="bootstrap-4.6.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="index.css">
-  <title>Luloy</title>
-  
-  <!-- System -->
+  <!-- React -->
   <script src="//unpkg.com/systemjs@0.19.47/dist/system.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
 </head>
 
 <body>
-<nav class="navbar shadow-lg fixed-top navbar-expand-sm navbar-light bg-light" id="nav">
- <a class="nav-brand " href="">
-  <img src="./assets/logo.png" alt="logo" height="50px"/>
- </a>
-  <button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarsExample03">
-    <ul class="navbar-nav mr-auto">
-      <li class="">
-        <a class="nav-link" data-route="home">Home</a>
-      </li>
-      <li class="">
-        <a class="nav-link" data-route="about">About</a>
-      </li>
-      <li class="">
-        <a class="nav-link" data-route="devs">Developers</a>
-      </li>
-      <!--<li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>-->
-      <li class="">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Customers</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown03">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-md-0">
-      <input disabled class=" form-control" type="text" placeholder="Search">
-    </form>
+ <nav class="navbar navbar-expand-sm navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand">?</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" data-route="home"><span class="bi-house"></span> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-route="about"><span class="bi-journals"></span> About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" data-route="lol"> <span></span>Lol</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#demo"><span class="bi-person-fill-gear" ></span> Account</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
-<div class="form-check form-switch">
-  <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-  <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label>
-</div>
-<div id="loadingContent">
- <div class="loader spin"></div>
-</div>
-  <div hidden id="content">
-   </div>
+<p id="m">here</p>
+  <div id="content"></div>
   <!-- Project -->
   <script src="config.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="offcanvas offcanvas-start navbar-light" id="demo">
+  <div class="offcanvas-header">
+    <h1 class="offcanvas-title">Jhon Doe</h1>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+   <ul class="navbar-nav">
+     <li class="nav-item">
+       <a class="nav-link disabled p-1 m-1 rounded" data-route="devs"><span class="bi-person"></span> Profile</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link disabled p-1 m-1 rounded" data-route="devs"><span class="bi-nut"></span> Settings</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link disabled p-1 m-1 rounded " data-route="devs"><span class="bi-currency-dollar"></span> Billing</a>
+     </li>
+   </ul>
+<div class="m-1 form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode">
+  <label class="form-check-label" for="mySwitch"> Dark mode</label>
+</div>
+  </div>
+</div>
 
+<!-- Button to open the offcanvas sidebar -->
 </body>
 </html>

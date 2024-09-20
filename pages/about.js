@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import HomePage from './home'
 import navigate from '/app'
 import {Data,Products,Getprice} from '/data/maindata'
 
@@ -21,8 +20,9 @@ class APage extends React.Component{
    var item = ""
    var itemid = null
    return(
-   <div key={cus.id} className="card-body bg-none m-1 border rounded table-responsive">
-   <h5 className="card-title">{cus.name}</h5>
+   <div key={cus.id} className="card bg-none m-1 border rounded table-responsive">
+   <h5 className="card-header">{cus.name}</h5>
+   <div className="card-body">
    <table className="table table-hover">
    <thead className="thead-light">
    <tr>
@@ -57,6 +57,7 @@ class APage extends React.Component{
    <li className="list-group-item">Highest Total: {item} - ₱{hp}</li>
    </ul>
    </div>
+   </div>
    )
   })
   
@@ -64,24 +65,23 @@ class APage extends React.Component{
   
   return (
    <div style={AboutPageStyle}>
-   <div className="m-2 card">
-   <div className="card-body">
-   <h3 className="card-title">{this.props.tit}</h3>
-   <p className="card-text">{this.props.txt}</p>
+   <div className="m-2">
+   <div className="card">
+   <h3 className="card-header">{this.props.tit}</h3>
+   <p className="card-body">{this.props.txt}</p>
    </div>
    </div>
-   <div className="m-2 border rounded card-body">
-   <h3 className="card-title">Luloy's storage</h3>
+   <div className="m-2 border rounded card p-1">
+   <h3 className="card-header">Luloy's storage</h3>
    <div className="progress">
    <div style={{width:'23%'}} className="progress-bar progress-bar-striped progress-bar-animated">23%</div>
    </div>
    </div>
    <button onClick={
    function (){
-   window.history.pushState({},'home',"#home")
-   navigate('home')
+   navigate()
    }
-   } className="m-2 btn btn-info" >Go to home</button>
+   } className="m-2 btn btn-info" ><span className="bi-chevron-left"></span> Home</button>
    <div className="m-1">
    {customers}
    </div>

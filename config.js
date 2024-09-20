@@ -24,8 +24,9 @@ SystemJS.config({
 });
 
 SystemJS.import('./app')
-.then(function () {
+.then(function (){
  window.loadpage()
-})
+ window.loadtheme()
+ }
+)
   .catch(console.error.bind(console));
-  

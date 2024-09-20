@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQLite in Browser</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
+</head>
+<body>
+  <h1>SQLite in Browser</h1>
+  <div id="output"></div>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDwQRb3ocaV4fXgAB6lj9CZHDj4au5Ta80",
+    authDomain: "cubetech-7e81a.firebaseapp.com",
+    databaseURL: "https://cubetech-7e81a-default-rtdb.firebaseio.com",
+    projectId: "cubetech-7e81a",
+    storageBucket: "cubetech-7e81a.appspot.com",
+    messagingSenderId: "176354355550",
+    appId: "1:176354355550:web:d563dc90a9aa1c61b347cf",
+    measurementId: "G-B9LM2ECNYE"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  console.log(app)
+</script>
+</body>
+</html>
