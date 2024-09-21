@@ -15,6 +15,9 @@ export const routes = {
  'not_found': notFound()
 }
 
+var notif_count = 0
+const notif_Section = document.getElementById('notif-sec')
+const Notifications = []
 
 
 export function notFound (){
@@ -26,4 +29,35 @@ export function notFound (){
   }} className="btn btn-link m-0 p-0">home</button>?</p>
   </div>
  )
+}
+
+class Notif extends React.Component{
+ render(){
+  return (
+  <div className="rounded">
+  {Notifications.map(item=>newNotification(item.t1,item.t2,item.t3,item.icon))}
+   </div>
+  )
+ }
+}
+
+function newNotification(type, title, text, icon){
+ return (
+  <div key={`notif-${notif_count}`} className={`border m-1 alert alert-${type} alert-dismissible`}>
+     <h3 className={`bi-${icon}`}>{icon?' ':''}{title}</h3>
+     <p>{text}</p>
+     <button className="btn-close" data-bs-dismiss="alert"></button>
+     </div>
+ )
+}
+
+export function notify (t1,t2,t3,i){
+ Notifications.push({
+  "t1":t1,
+  "t2":t2,
+  "t3":t3,
+  "icon":i
+ })
+ notif_count++
+ ReactDOM.render(<Notif></Notif>,notif_Section)
 }

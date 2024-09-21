@@ -23,19 +23,19 @@ class Alert extends React.Component{
   
   return (
    <div>
-   <div className="border m-1 alert alert-success">
+   <div className="border m-1 alert alert-success alert-dismissible">
    <h3 className="bi-check-circle"></h3>
    <p>Page loaded</p>
    </div>
    <div className="card m-1 border ">
-   <h5 className="card-header">Devs: </h5>
+   <h5 className="card-header">Info: </h5>
    <button onClick={
     function () {
      navigate('devs')
      
     }
    } className="btn btn-warning m-3">
-   Developers <span className="bi-wrench"></span>
+   Members <span className="bi-shield-fill-check"></span>
    </button>
    </div>
    </div>

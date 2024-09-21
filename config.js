@@ -1,3 +1,18 @@
+
+function loadtheme() {
+ const data = localStorage.theme?localStorage.theme:'light'
+ switch (data) {
+  case 'light':
+   document.documentElement.setAttribute('data-bs-theme', 'light')
+   break;
+  case 'dark':
+   document.documentElement.setAttribute('data-bs-theme', 'dark')
+   break;
+ }
+}
+
+loadtheme()
+
 SystemJS.config({
   baseURL:'https://unpkg.com/',
   defaultExtension: true,
@@ -28,5 +43,6 @@ SystemJS.import('./app')
  window.loadpage('home')
  window.loadtheme()
  }
+ 
 )
   .catch(console.error.bind(console));

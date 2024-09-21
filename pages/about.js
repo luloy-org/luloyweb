@@ -81,7 +81,7 @@ class APage extends React.Component{
    function (){
    navigate()
    }
-   } className="m-2 btn btn-info" ><span className="bi-chevron-left"></span> Home</button>
+   } className="m-2 btn btn-info" ><span className="bi-chevron-left"></span> Go to null</button>
    <div className="m-1">
    {customers}
    </div>

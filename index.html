@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" type="text/css" media="all" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="shortcut icon" href="/assets/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="index.css">
   <!-- React -->
   <script src="//unpkg.com/systemjs@0.19.47/dist/system.js"></script>
 
@@ -16,7 +17,9 @@
 <body>
  <nav class="navbar navbar-expand-sm navbar-light">
   <div class="container-fluid">
-    <a class="navbar-brand">?</a>
+    <a class="navbar-brand" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+     <img id="logo" src="/assets/user.png" alt="logo">
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,9 +34,6 @@
         <li class="nav-item">
           <a class="nav-link disabled" data-route="lol"> <span class="bi-shield-fill-check"></span> Admin Panel</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="offcanvas" data-bs-target="#demo"><span class="bi-person-fill-gear" ></span> Account</a>
-        </li>
       </ul>
     </div>
   </div>
@@ -42,8 +42,9 @@
   <!-- Project -->
   <script src="config.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <div class="offcanvas offcanvas-start navbar-light" id="demo">
+  <div class="offcanvas offcanvas-start navbar-light" id="sidebar">
   <div class="offcanvas-header">
+   <img src="/assets/user.png" alt="logo" id="sidebarprof">
     <h1 class="offcanvas-title">Jhon Doe</h1>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
   </div>
@@ -62,6 +63,10 @@
 <div class="m-1 form-check form-switch">
   <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode">
   <label class="form-check-label" for="mySwitch"> Dark mode</label>
+</div>
+<h4 class="m-1 p-1"><span class="bi-bell-fill"></span> Notifications: </h4>
+<div id="notif-sec" class="column">
+ <!-- Notifcations here -->
 </div>
   </div>
 </div>
