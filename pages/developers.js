@@ -24,18 +24,10 @@ class MainPage extends React.Component{
    }
    
   return (
-   <div key={dev.id} className="card m-1 p-0 break-word" style={{width:'200px'}}>
-  <img className="card-img-top rounded" style={imgstye} src={dev.img?`./assets/${dev.img}`:'./assets/user.png'} alt="Card image"/>
+   <div key={dev.id} className=" card m-1 p-0 break-word" style={{width:'200px'}}>
+  <img className="card-img-top" style={imgstye} src={dev.img?`./assets/${dev.img}`:'./assets/user.png'} alt="Card image"/>
   <div className="m-0">
     <h5 className="card-title p-1 m-0 text-center">{dev.name}</h5>
-    <div className="m-1 d-flex justify-content-center" role="group">
-    {dev.pos?dev.pos.map(rank=>{
-     
-     return(
-     <button key={Math.random()*99999} className="btn btn-info m-1 rounded" data-bs-toggle="tooltip" title={Data.positions[rank].text}><span className={` bi-${Data.positions[rank].icon}`}></span></button>
-     )
-    }):'No position(s)'}
-    </div>
   </div>
 </div>
    )})
