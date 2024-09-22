@@ -23,10 +23,6 @@ class Alert extends React.Component{
   
   return (
    <div>
-   <div className="border m-1 alert alert-success alert-dismissible">
-   <h3 className="bi-check-circle"></h3>
-   <p>Page loaded</p>
-   </div>
    <div className="card m-1 border ">
    <h5 className="card-header">Info: </h5>
    <button onClick={
