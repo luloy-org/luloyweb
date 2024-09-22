@@ -4,8 +4,9 @@ import AboutPage from './about'
 import DevsPage from './developers'
 import navigate from '/app'
 
-import React from 'react'
 import ReactDOM from 'react-dom'
+import useState from 'react'
+import React from 'react'
 
 export const routes = {
  'home': HomePage(),
@@ -15,7 +16,7 @@ export const routes = {
  'not_found': notFound()
 }
 
-var notif_count = 0
+var count = 0
 const notif_Section = document.getElementById('notif-sec')
 const Notifications = []
 
@@ -31,25 +32,26 @@ export function notFound (){
  )
 }
 
-class Notif extends React.Component{
- render(){
+export default function Main (){
+ var count = 0
   return (
-  <div className="rounded">
-  {Notifications.map(item=>newNotification(item.t1,item.t2,item.t3,item.icon))}
+  <div className="rounded column">
+  {Notifications.map(notif=>{
+  notif.id = count
+   count++
+   return (
+   <div key={count} className={`alert-dismissible alert alert-${notif.t1}`}>
+   <h5>{notif.icon?<span className={`bi-${notif.icon}`}> </span>:''}{notif.t2}</h5>
+   <p>{notif.t3}</p>
+   <button onClick={function () {
+   const item = Notifications[parseInt(notif.id)]
+   }} type="button" className="btn btn-close" data-bs-dismiss="alert" aria-label="closed"></button>
    </div>
   )
+  })}
+  </div>
+  )
  }
-}
-
-function newNotification(type, title, text, icon){
- return (
-  <div key={`notif-${notif_count}`} className={`border m-1 alert alert-${type} alert-dismissible`}>
-     <h3 className={`bi-${icon}`}>{icon?' ':''}{title}</h3>
-     <p>{text}</p>
-     <button className="btn-close" data-bs-dismiss="alert"></button>
-     </div>
- )
-}
 
 export function notify (t1,t2,t3,i){
  Notifications.push({
@@ -58,6 +60,5 @@ export function notify (t1,t2,t3,i){
   "t3":t3,
   "icon":i
  })
- notif_count++
- ReactDOM.render(<Notif></Notif>,notif_Section)
+ ReactDOM.render(Main(),notif_Section)
 }

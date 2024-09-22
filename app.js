@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {routes} from './pages/app.pages'
+import {routes,notify} from './pages/app.pages'
 
 const content = document.getElementById('content')
 const toggle_theme = document.getElementById('mySwitch')
@@ -22,7 +22,7 @@ export function setTheme() {
 }
 
 function navigate(route) {
- const path = routes[route]?route:'not_found'
+ var path = routes[route]?route:'not_found'
  const buttons = document.querySelectorAll(`a[data-route]`)
  
  buttons.forEach((navbtn)=>{
@@ -34,8 +34,14 @@ function navigate(route) {
    navbtn.classList.remove('active')
   }
  })
- 
  ReactDOM.render(routes[path],content)
+ const success = (path=route)?true:false
+ notify(
+  success?'success':'danger',
+  success?'Success':'Error',
+  success?`${path} loaded!`:'Unknown route',
+  success?'check-circle-fill':'x-circle-fill'
+ )
 }
 
 //Outside the function
