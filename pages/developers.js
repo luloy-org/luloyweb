@@ -24,8 +24,8 @@ class MainPage extends React.Component{
    }
    
   return (
-   <div key={dev.id} className=" card m-1 p-0 break-word" style={{width:'200px'}}>
-  <img className="card-img-top" style={imgstye} src={dev.img?`./assets/${dev.img}`:'./assets/user.png'} alt="Card image"/>
+   <div key={dev.id} className=" card m-1 p-2 break-word" style={{width:'200px'}}>
+  <img className="card-img-top border rounded" style={imgstye} src={dev.img?`./assets/${dev.img}`:'./assets/user.png'} alt="Card image"/>
   <div className="m-0">
     <h5 className="card-title p-1 m-0 text-center">{dev.name}</h5>
   </div>
