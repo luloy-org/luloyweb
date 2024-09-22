@@ -42,6 +42,8 @@ SystemJS.import('./app')
 .then(function (){
  window.loadpage('home')
  window.loadtheme()
+ 
+ 
  }
  
 )

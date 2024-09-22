@@ -45,6 +45,19 @@ function navigate(route) {
 }
 
 //Outside the function
+const disbtn = document.querySelectorAll('.dis-link')
+disbtn.forEach((but)=>{
+ but.onclick=(event)=>{
+  console.log("clicked")
+  const attr = but.getAttribute('name')
+ notify(
+  'info',
+  'Information',
+  attr?`${attr} is disabled`:'this button is disabled',
+  'info-circle-fill'
+ )
+ }
+})
 const buttons = document.querySelectorAll('a[data-route]')
 buttons.forEach((btn)=>{
  const data = btn.getAttribute('data-route')
@@ -73,6 +86,8 @@ toggle_theme.oninput=(event)=>{
 
 window.loadpage = navigate
 window.loadtheme = setTheme
+
+
 
 
 export default navigate
