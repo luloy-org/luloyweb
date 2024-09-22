@@ -38,9 +38,6 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
    }}>
-   <button onClick={function () {
-    window.history.back()
-   }} className="btn m-1 btn-info"><span className="bi-chevron-left"></span> Back</button>
    <div className="container">
    <div className="row">
    {devslist}

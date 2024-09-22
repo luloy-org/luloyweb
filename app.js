@@ -48,13 +48,12 @@ function navigate(route) {
 const disbtn = document.querySelectorAll('.dis-link')
 disbtn.forEach((but)=>{
  but.onclick=(event)=>{
-  console.log("clicked")
   const attr = but.getAttribute('name')
  notify(
-  'info',
+  'warning',
   'Information',
   attr?`${attr} is disabled`:'this button is disabled',
-  'info-circle-fill'
+  'exclamation-circle-fill'
  )
  }
 })
