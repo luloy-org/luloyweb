@@ -40,7 +40,7 @@ export default function Main (){
   notif.id = count
    count++
    return (
-   <div key={count} className={`alert-dismissible alert alert-${notif.t1}`}>
+   <div key={count} className={`border-0 m-2 alert-dismissible alert alert-${notif.t1}`}>
    <h5>{notif.icon?<span className={`bi-${notif.icon}`}> </span>:''}{notif.t2}</h5>
    <p>{notif.t3}</p>
    <button onClick={function () {
