@@ -82,9 +82,6 @@ class APage extends React.Component{
    navigate()
    }
    } className="m-2 btn btn-info" ><span className="bi-chevron-left"></span> Go to null</button>
-   <div className="m-1">
-   {customers}
-   </div>
    </div>
    )
  }
@@ -92,6 +89,6 @@ class APage extends React.Component{
 
 export default function AboutPage() {
  return (
-  <APage tit='About page title' txt='Test Description'/>
+  <APage tit='About us' txt='Blablablablabla'/>
   )
 }
