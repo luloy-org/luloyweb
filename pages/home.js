@@ -13,6 +13,10 @@ class MainPage extends React.Component{
    <h1 className="">{this.props.title}</h1>
    <p className="">{this.props.text}</p>
    </div>
+   <div className="card m-1">
+   <h1 className="card-header">Note: </h1>
+   <p className="card-body">The contents of this website is only for test purposes and meant nothing</p>
+   </div>
    <Alert/>
    </div>
    )
