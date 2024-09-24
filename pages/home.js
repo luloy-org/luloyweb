@@ -17,12 +17,6 @@ class MainPage extends React.Component{
    <h1 className="card-header">Note: </h1>
    <p className="card-body">The contents of this website is only for test purposes and meant nothing</p>
    </div>
-   <div className="card">
-   <h5 className="card-header">Site status: </h5>
-   <div className="card-body">
-   <img src="[![Netlify Status](https://api.netlify.com/api/v1/badges/183bce30-fc1f-46ed-a9a3-d13c1942a241/deploy-status?branch=main)](https://app.netlify.com/sites/luloy/deploys)" alt="stat"></img>
-   </div>
-   </div>
    <Alert/>
    </div>
    )
