@@ -1,7 +1,7 @@
 
-import HomePage from './home'
-import AboutPage from './about'
-import DevsPage from './developers'
+import HomePage from './home.jsx'
+import AboutPage from './about.jsx'
+import DevsPage from './developers.jsx'
 import navigate from '/app'
 
 import ReactDOM from 'react-dom'

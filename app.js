@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {routes,notify} from './pages/app.pages'
+import {routes,notify} from './pages/app.pages.jsx'
 
 const content = document.getElementById('content')
 const toggle_theme = document.getElementById('mySwitch')
