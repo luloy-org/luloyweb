@@ -19,7 +19,7 @@ SystemJS.config({
   packages: {
     ".": {
       main: './app.js',
-      defaultExtension: 'js'
+      defaultExtension:'js'
     }
   },
   meta: {
@@ -27,6 +27,11 @@ SystemJS.config({
       'babelOptions': {
         react: true
       }
+    },
+    '*.jsx': {
+     'babelOptions': {
+      react: true
+     }
     }
   },
   map: {
