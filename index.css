@@ -15,6 +15,14 @@
  transition: all .3s ease
 }
 
+.notif{
+ color:yellow;
+}
+#notif-sec{
+ max-height: 61%;
+ overflow-y: scroll;
+}
+
 /* HTML: <div class="loader"></div> */
 .loader {
   width: 120px;

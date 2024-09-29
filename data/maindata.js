@@ -94,6 +94,7 @@ export const Data = [
  {
   id:Math.random(),
   name:'Julbading Riopay',
+  img:'julbading.jpeg',
   pos:['main']
  },
  {
