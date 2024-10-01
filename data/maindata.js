@@ -106,7 +106,7 @@ export const Data = [
   id:Math.random(),
   name:'Alexander Pinapit',
   des:'Alex V2',
-  pos:['main','dev']
+  img:'alexv2.jpg'
  },
  {
   id:Math.random(),
