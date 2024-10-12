@@ -76,6 +76,7 @@ class APage extends React.Component{
    <div className="progress m-2">
    <div style={{width:'23%'}} className="progress-bar progress-bar-striped progress-bar-animated">23%</div>
    </div>
+   {customers}
    </div>
    <button onClick={
    function (){

@@ -1,15 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {routes,notify} from './pages/app.pages.jsx'
+import {routes, notify} from './pages/app.pages.jsx'
 
 const content = document.getElementById('content')
 const toggle_theme = document.getElementById('mySwitch')
 
-
-
 export function setTheme() {
  const data = localStorage.theme?localStorage.theme:'light'
- 
  switch (data) {
   case 'light':
    document.documentElement.setAttribute('data-bs-theme', 'light')
