@@ -50,3 +50,7 @@
 @keyframes l14 {
   100% {left: calc(100% + 20px)}
 }
+
+.nav-link{
+ cursor:pointer;
+}
