@@ -62,7 +62,7 @@ export const Data = [
   id:Math.random(),
   name:'Regie',
   des:'Sup lil nigs',
-  img:null,
+  img:'conde.jpg',
   pos:['data-sec','moder','anim']
  },
  {
@@ -80,7 +80,7 @@ export const Data = [
  },
  {
   id:Math.random(),
-  name:'Rey',
+  name:'Reymart',
   img:null,
   des:NaN,
   pos:['admin','model']
